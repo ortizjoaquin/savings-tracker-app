@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #eeeeee;
+  /* color: #fff; */
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  padding: .5rem;
+}
+
+input:focus {
+  font-size: 18px;
+  transition: all .2s;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 85px;
+  background-color: #ffffff;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbarNav {
+  width: 100%;
+  margin-top: 0.75rem;
+  overflow-y: hidden;
+}
+
+.navbarListItems {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbarListItem {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbarListItemName,
+.navbarListItemNameActive {
+  margin-top: 0.25rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: #8f8f8f;
+}
+.navbarListItemNameActive {
+  color: #2c2c2c;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  font-size: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: #222831;
+}
+
+.card {
+  background-color: #eeeeee;
+  color: #393e46;
+  border-radius: 15px;
+  padding: 40px 50px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.card h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* .card.first {
+  background-color: rgba(182, 182, 182, 0.4);
+  color: rgb(0, 0, 0);
+} */
+
+.card.expense {
+  background-color: red;
+}
+
+.card.first h2 {
+  font-size: 50px;
+}
+
+.nameInput {
+  margin-bottom: 2rem;
+  width: -webkit-fill-available;
+  border: none;
+  padding: .5rem;
+  border-radius: 10px;
+}
+
+.emailInput {
+  margin-bottom: 2rem;
+  width: -webkit-fill-available;
+  border: none;
+  padding: .5rem;
+  border-radius: 10px;
+}
+
+.passwordInputDiv {
+  position: relative;
+  
+}
+
+.passwordInput {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: -webkit-fill-available;
+  border: none;
+  padding: .5rem;
+  border-radius: 10px;
+}
+
+.showPassword {
+  color: #222831;
+  cursor: pointer;
+  position: absolute;
+  top: 17%;
+  right: 4%;
+  font-size: 21px;
+}
+
+.forgotPasswordLink {
+  cursor: pointer;
+  color: #00cc66;
+  font-weight: 600;
+  text-align: right;
+}
+
+.signInBar,
+.signUpBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: inherit;
+}
+
+.btn-signIn {
+  display: flex;
+  border-radius: 50px;
+  border: none;
+  background-color: #0092ca;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.btn-signIn:hover {
+  background-color: #00a4e5;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.btn-signIn svg {
+  font-size: 24px;
+  margin-left: 3px;
+}
+
+.signInText {
+  font-size: 32px;
+  color: #0092ca;
+  font-weight:bolder;
+}
+
+.signInLink, .signUpLink {
+  text-decoration: none;
+  color: #393e46;
+}
+
+.signInLink:hover, .signUpLink:hover {
+  font-size: 17px;
+  color: #222831;
+  transition: all .2s;
+}
