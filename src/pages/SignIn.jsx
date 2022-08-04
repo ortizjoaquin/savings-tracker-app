@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-import { FaUser, FaEye, FaEyeSlash } from 'react-icons/fa'
+// import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
+// import { db } from '../firebase.config'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import Button from '../components/shared/Button'
 
 function SignIn() {
@@ -17,6 +19,7 @@ function SignIn() {
       [e.target.id]: e.target.value,
     }))
   }
+
   const passwordVisibility = () => setShowPassword((prevState) => !prevState)
 
   return (
