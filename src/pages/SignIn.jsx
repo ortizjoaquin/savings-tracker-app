@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import {Link, useNavigate} from 'react-router-dom'
-// import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
-// import { db } from '../firebase.config'
+import {getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { db } from '../firebase.config'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import Button from '../components/shared/Button'
 
@@ -20,6 +21,20 @@ function SignIn() {
     }))
   }
 
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const auth = getAuth()
+      const userCredential = await signInWithEmailAndPassword(auth, email, password)
+      if(userCredential.user) {
+        navigate('/')
+      }
+    }
+    catch (error){
+      toast.error('Bad user credentials');
+    }
+  }
+
   const passwordVisibility = () => setShowPassword((prevState) => !prevState)
 
   return (
@@ -28,7 +43,7 @@ function SignIn() {
         <header>
           <p className='pageHeader'>Welcome Back!</p>
         </header>
-        <form>
+        <form onSubmit={onSubmit}>
           <input 
             type='email'
             className='emailInput'
@@ -58,9 +73,11 @@ function SignIn() {
           </div>
         </form>
         {/* Google OAuth */}
-        <Link to='/signup' className='signUpLink'>
-          Or Sign Up Instead!
-        </Link>
+        <div className='signInUpLinkContainer'>
+          <Link to='/signup' className='signUpLink'>
+            Or Sign Up Instead!
+          </Link>
+        </div>
       </div>
     </>
   )

@@ -23,11 +23,6 @@ input {
   padding: .5rem;
 }
 
-input:focus {
-  font-size: 18px;
-  transition: all .2s;
-}
-
 .container {
   max-width: 768px;
   margin: auto;
@@ -186,7 +181,21 @@ header {
   background-color: #00a4e5;
   transition: all .2s;
   cursor: pointer;
-  font-size: 32px;
+}
+
+.btn-logOut {
+  display: flex;
+  border-radius: 50px;
+  border: none;
+  background-color: #0092ca;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.btn-logOut:hover {
+  background-color: #00a4e5;
+  transition: all .2s;
+  cursor: pointer;
 }
 
 .btn-signIn svg {
@@ -200,13 +209,18 @@ header {
   font-weight:bolder;
 }
 
+.signInUpLinkContainer {
+  text-align: center;
+  margin-top: 50px;
+}
+
 .signInLink, .signUpLink {
+  text-align: center;
   text-decoration: none;
   color: #393e46;
 }
 
 .signInLink:hover, .signUpLink:hover {
-  font-size: 17px;
-  color: #222831;
+  color: #0092ca;
   transition: all .2s;
 }

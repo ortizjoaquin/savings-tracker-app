@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { toast } from 'react-toastify'
 import {Link, useNavigate} from 'react-router-dom'
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
@@ -38,7 +39,7 @@ function SignUp() {
 
       navigate('/')
     } catch (error) {
-      console.log(error)
+      toast.error('Enter valid credentials')
     }
   }
   const passwordVisibility = () => setShowPassword((prevState) => !prevState)
@@ -87,9 +88,11 @@ function SignUp() {
           </div>
         </form>
         {/* Google OAuth */}
-        <Link to='/signin' className='signInLink'>
-          Already a user? Sign In instead!
-        </Link>
+        <div className='signInUpLinkContainer'>
+          <Link to='/signin' className='signInLink'>
+            Already a user? Sign In instead!
+          </Link>
+        </div>
       </div>
     </>
   )

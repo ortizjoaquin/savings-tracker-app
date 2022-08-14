@@ -1,12 +1,13 @@
-import { FaChevronRight } from 'react-icons/fa'
+import { FaChevronRight, FaPlus } from 'react-icons/fa'
 
-function Button({text, version, type, isDisabled}) {
+function Button({text, version, type, isDisabled, onClick}) {
   return (
-    <button type={type} disabled={isDisabled} className={`btn-${version}`}>
+    <button type={type} disabled={isDisabled} className={`btn-${version}`} onClick={onClick}>
         <p>
           {text}
         </p>
         {version === 'signIn' && <FaChevronRight/>}
+        {version === 'add' && <FaPlus/>}
     </button>
   )
 }
